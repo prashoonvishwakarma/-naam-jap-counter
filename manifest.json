@@ -1,0 +1,10 @@
+{
+    "name": "Naam Jap Counter",
+    "short_name": "Naam Jap",
+    "start_url": "./",
+    "display": "standalone",
+    "background_color": "#000000",
+    "theme_color": "#ff7a00",
+    "orientation": "portrait",
+    "description": "A simple Naam Jap and Mala counter app."
+}
