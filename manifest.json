@@ -1,10 +1,17 @@
 {
     "name": "Naam Jap Counter",
     "short_name": "Naam Jap",
+    "lang": "en",
+    "dir": "ltr",
+
     "start_url": "./",
+    "scope": "./",
+
     "display": "standalone",
+
     "background_color": "#000000",
     "theme_color": "#ff7a00",
+
     "orientation": "portrait",
 
     "icons": [
