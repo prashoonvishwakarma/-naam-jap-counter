@@ -1,4 +1,5 @@
 {
+    "id": "./",
     "name": "Naam Jap Counter",
     "short_name": "Naam Jap",
     "lang": "en",
@@ -25,6 +26,11 @@
             "sizes": "512x512",
             "type": "image/png"
         }
+    ],
+
+    "categories": [
+        "utilities",
+        "lifestyle"
     ],
 
     "description": "A simple Naam Jap and Mala counter app."
