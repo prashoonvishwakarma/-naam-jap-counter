@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Naam Jap Counter</title>
+    <link rel="manifest" href="manifest.json">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app">
+
+        <h1>Naam Jap Counter</h1>
+
+        <div class="mantra">
+            ॐ दुं दुर्गायै नमः
+        </div>
+
+        <!-- Jap Target -->
+
+        <div class="target-section">
+
+            <label for="targetSelect">Jap Target</label>
+
+            <select id="targetSelect">
+                <option value="108">108</option>
+                <option value="1008">1008</option>
+                <option value="10000" selected>10000</option>
+                <option value="custom">Custom</option>
+            </select>
+
+            <input
+                type="number"
+                id="customTarget"
+                placeholder="Enter custom target"
+                min="1"
+                style="display: none;"
+            >
+
+            <button id="applyTarget">
+                Apply Target
+            </button>
+
+        </div>
+
+        <!-- Progress Circle -->
+
+        <div class="progress-circle" id="progressCircle">
+
+            <div class="progress-content">
+                <div id="counter">0 / 10000</div>
+                <small>JAP</small>
+            </div>
+
+        </div>
+
+        <!-- Main Jap Button -->
+
+        <button id="japButton">
+            JAP
+        </button>
+
+        <!-- Controls -->
+
+        <div class="controls">
+
+            <button id="undoButton">
+                ↩ Undo
+            </button>
+
+            <button id="resetButton">
+                Reset
+            </button>
+
+        </div>
+
+        <!-- Statistics -->
+
+        <div class="stats">
+
+            <div class="stat-box">
+
+                <span>Today's Jap</span>
+
+                <strong id="todayCount">0</strong>
+
+            </div>
+
+            <div class="stat-box">
+
+                <span>Mala</span>
+
+                <strong id="malaCount">0 / 108</strong>
+
+                <div class="mala-progress">
+                    <div id="malaProgressBar"></div>
+                </div>
+
+            </div>
+
+            <div class="stat-box">
+
+                <span>Completed Malas</span>
+
+                <strong id="completedMalas">0</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,479 @@
+/* =========================================
+   NAAM JAP COUNTER
+   BHAGVA + AMOLED + GLASS THEME
+========================================= */
+
+* {
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    margin: 0;
+
+    font-family: Arial, sans-serif;
+
+    background: #000000;
+    color: #ffffff;
+
+    text-align: center;
+
+    position: relative;
+    overflow-x: hidden;
+}
+
+
+/* =========================================
+   SUBTLE AMOLED REFLECTION
+========================================= */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    top: -30%;
+    left: -20%;
+
+    width: 140%;
+    height: 60%;
+
+    background: linear-gradient(
+        120deg,
+        transparent 35%,
+        rgba(255, 255, 255, 0.035) 50%,
+        transparent 65%
+    );
+
+    transform: rotate(-8deg);
+
+    pointer-events: none;
+
+    z-index: 10;
+}
+
+
+/* =========================================
+   MAIN APP
+========================================= */
+
+.app {
+    min-height: 100vh;
+
+    padding: 25px 15px;
+}
+
+
+/* =========================================
+   TITLE
+========================================= */
+
+h1 {
+    font-size: 26px;
+
+    margin: 10px 0 10px;
+
+    font-weight: 700;
+}
+
+
+/* =========================================
+   MAIN MANTRA
+========================================= */
+
+.mantra {
+    display: inline-block;
+
+    margin: 20px auto 30px;
+
+    padding: 14px 22px;
+
+    font-size: 32px;
+
+    font-weight: 700;
+
+    color: #ff7a00;
+
+    line-height: 1.4;
+
+    letter-spacing: 1px;
+
+    background: rgba(255, 122, 0, 0.035);
+
+    border: 1px solid rgba(255, 122, 0, 0.18);
+
+    border-radius: 16px;
+
+    text-shadow:
+        0 0 8px rgba(255, 122, 0, 0.5),
+        0 0 20px rgba(255, 122, 0, 0.2);
+
+    box-shadow:
+        0 0 20px rgba(255, 122, 0, 0.08),
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+/* =========================================
+   TARGET SECTION
+========================================= */
+
+.target-section {
+    margin: 20px auto 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    gap: 10px;
+}
+
+
+.target-section label {
+    font-size: 14px;
+
+    color: #aaa;
+}
+
+
+.target-section select,
+.target-section input {
+    width: 180px;
+
+    padding: 10px;
+
+    border: 1px solid #333333;
+
+    border-radius: 8px;
+
+    background: #111111;
+
+    color: #ffffff;
+
+    font-size: 15px;
+
+    text-align: center;
+}
+
+
+#applyTarget {
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #ff7a00;
+
+    color: #000000;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    box-shadow:
+        0 0 12px rgba(255, 122, 0, 0.25);
+}
+
+
+#applyTarget:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   MAIN PROGRESS CIRCLE
+========================================= */
+
+.progress-circle {
+    width: 240px;
+    height: 240px;
+
+    border-radius: 50%;
+
+    margin: 0 auto;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    background: conic-gradient(
+        #ff7a00 0deg,
+        #242424 0deg
+    );
+
+    position: relative;
+
+    box-shadow:
+        0 0 8px rgba(255, 122, 0, 0.25),
+        0 0 25px rgba(255, 122, 0, 0.12),
+        inset 0 0 12px rgba(255, 122, 0, 0.08);
+}
+
+
+/* Inner circle */
+
+.progress-circle::before {
+    content: "";
+
+    position: absolute;
+
+    width: 220px;
+    height: 220px;
+
+    background: #000000;
+
+    border-radius: 50%;
+}
+
+
+/* =========================================
+   PROGRESS CONTENT
+========================================= */
+
+.progress-content {
+    position: relative;
+
+    z-index: 2;
+
+    width: 100%;
+
+    text-align: center;
+}
+
+
+#counter {
+    font-size: 30px;
+
+    font-weight: bold;
+}
+
+
+.progress-content small {
+    display: block;
+
+    margin-top: 8px;
+
+    font-size: 14px;
+
+    color: #aaa;
+}
+
+
+/* =========================================
+   JAP BUTTON
+========================================= */
+
+#japButton {
+    width: 140px;
+    height: 140px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    margin-top: 30px;
+
+    background: #ff7a00;
+
+    color: #000000;
+
+    font-size: 24px;
+
+    font-weight: bold;
+
+    position: relative;
+
+    overflow: hidden;
+
+    box-shadow:
+        0 0 12px rgba(255, 122, 0, 0.3),
+        0 0 30px rgba(255, 122, 0, 0.12);
+}
+
+
+/* JAP button reflection */
+
+#japButton::after {
+    content: "";
+
+    position: absolute;
+
+    top: 8%;
+    left: 12%;
+
+    width: 70%;
+    height: 35%;
+
+    background: rgba(255, 255, 255, 0.10);
+
+    border-radius: 50%;
+
+    transform: rotate(-20deg);
+
+    pointer-events: none;
+}
+
+
+#japButton:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   CONTROLS
+========================================= */
+
+.controls {
+    margin-top: 18px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 12px;
+}
+
+
+.controls button {
+    padding: 10px 20px;
+
+    border: none;
+
+    border-radius: 8px;
+
+    background: #292929;
+
+    color: #ffffff;
+
+    font-size: 14px;
+}
+
+
+.controls button:active {
+    transform: scale(0.95);
+}
+
+
+/* =========================================
+   STATISTICS
+========================================= */
+
+.stats {
+    display: flex;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    margin-top: 30px;
+
+    flex-wrap: wrap;
+}
+
+
+/* =========================================
+   STAT CARDS
+========================================= */
+
+.stat-box {
+    background: #080808;
+
+    padding: 14px 12px;
+
+    border-radius: 12px;
+
+    min-width: 105px;
+
+    border: 1px solid rgba(255, 122, 0, 0.12);
+
+    box-shadow:
+        inset 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+
+.stat-box span {
+    display: block;
+
+    font-size: 12px;
+
+    color: #aaa;
+
+    margin-bottom: 8px;
+}
+
+
+.stat-box strong {
+    font-size: 18px;
+}
+
+
+/* =========================================
+   MALA PROGRESS
+========================================= */
+
+.mala-progress {
+    width: 160px;
+
+    height: 6px;
+
+    margin-top: 8px;
+
+    background: #222222;
+
+    border-radius: 10px;
+
+    overflow: hidden;
+}
+
+
+#malaProgressBar {
+    width: 0%;
+
+    height: 100%;
+
+    background: #ff7a00;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 0 8px rgba(255, 122, 0, 0.5);
+
+    transition: width 0.2s ease;
+}
+
+
+/* =========================================
+   MOBILE ADJUSTMENT
+========================================= */
+
+@media (max-width: 400px) {
+
+    .mantra {
+        font-size: 27px;
+
+        padding: 12px 16px;
+    }
+
+    .progress-circle {
+        width: 220px;
+        height: 220px;
+    }
+
+    .progress-circle::before {
+        width: 202px;
+        height: 202px;
+    }
+
+    #japButton {
+        width: 130px;
+        height: 130px;
+    }
+}
